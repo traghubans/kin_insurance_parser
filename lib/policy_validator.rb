@@ -3,7 +3,7 @@ class PolicyValidator
         @policy_number = policy_number
     end
 
-    # Task 1: We want to check if a number is valid & assign a status
+    # check if a number is valid & assign a status
     def status 
         return "ILL" if @policy_number.include?("?")
         return "ERR" unless checksum_calculator?
@@ -13,8 +13,7 @@ class PolicyValidator
 
     private 
 
-    # We want a private method to calculate the checksum
-    # Checksum is calculated by 
+    # private method to calculate the checksum
     def checksum_calculator?
         # cast the policy number
         checksumArray = @policy_number.chars.map(&:to_i)
