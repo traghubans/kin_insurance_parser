@@ -17,7 +17,7 @@ class PolicyValidator
     # Checksum is calculated by 
     def checksum_calculator?
         # cast the policy number
-        checksumArray = policy_number.chars.map(&:to_i)
+        checksumArray = @policy_number.chars.map(&:to_i)
         checksumResult = checksumArray.each_with_index.sum {
             |num, i|
             num * (9 - i)
