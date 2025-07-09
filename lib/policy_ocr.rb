@@ -6,14 +6,16 @@ class PolicyOCR
     def parse
       entries.map do |entry|
         digit_blocks = split_digits(entry)
-        digit_blocks.map { |block| parse_digit(block) }.join
+        number = digit_blocks.map { |block| parse_digit(block) }.join
+        validator = PolicyValidator.new(number)
+        [number, validator.status]
       end
     end
   
     private
   
     def entries
-      # Subtask 1: return array of 3-line entry arrays
+      # task 1: return array of 3-line entry arrays
       lines = File.readlines(@file_path).map(&:rstrip)
       
       # Validate file format
@@ -33,7 +35,7 @@ class PolicyOCR
     end
 
     def split_digits(entry)
-      # Subtask 2: turn 3 lines into 9 digit blocks
+      # task 2: turn 3 lines into 9 digit blocks
       (0..8).map do |position|
         entry.map do |line|
           start_pos = position * 3
