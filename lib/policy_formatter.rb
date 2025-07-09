@@ -1,3 +1,4 @@
+# Purpose: Format the Policy Number and Status for an output file
 class PolicyFormatter
     def initialize(output_path)
         @output_path = output_path
@@ -7,7 +8,7 @@ class PolicyFormatter
     def write(entries)
         File.open(@output_path, "w") do |file|
             entries.each do |number, status|
-                puts number
+                # puts number
                 line = [number, status].compact.join(" ")
                 file.puts(line)
             end

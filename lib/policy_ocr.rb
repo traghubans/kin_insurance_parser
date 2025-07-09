@@ -17,7 +17,7 @@ class PolicyOCR
     private
   
     def entries
-      # task 1: return array of 3-line entry arrays
+      # return array of 3-line entry arrays, chomp removes /n
       lines = File.readlines(@file_path).map(&:chomp)
       
       # Validate file format
@@ -37,7 +37,7 @@ class PolicyOCR
     end
 
     def split_digits(entry)
-      # task 2: turn 3 lines into 9 digit blocks
+      # turn 3 lines into 9 digit blocks
       (0..8).map do |position|
         entry.map do |line|
           start_pos = position * 3
@@ -47,7 +47,7 @@ class PolicyOCR
     end
 
     def parse_digit(block)
-      # Subtask 3: convert 3x3 block into string digit or "?"
+      # convert 3x3 block into string digit or "?"
       digit_patterns = {
         # 0
         [
