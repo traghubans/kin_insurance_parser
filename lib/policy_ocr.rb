@@ -1,3 +1,5 @@
+require_relative './policy_validator'
+
 class PolicyOCR
     def initialize(file_path)
       @file_path = file_path
@@ -16,7 +18,7 @@ class PolicyOCR
   
     def entries
       # task 1: return array of 3-line entry arrays
-      lines = File.readlines(@file_path).map(&:rstrip)
+      lines = File.readlines(@file_path).map(&:chomp)
       
       # Validate file format
       raise ArgumentError, "File does not have a multiple of 4 lines" unless lines.size % 4 == 0

@@ -1,6 +1,6 @@
 require_relative '../lib/policy_formatter'
 
-describe PolicyOutputFormatter do
+describe PolicyFormatter do
   let(:output_path) { "spec/tmp/output.txt" }
 
   before(:each) do
@@ -18,7 +18,7 @@ describe PolicyOutputFormatter do
       ["86110??36", "ILL"]
     ]
 
-    formatter = PolicyOutputFormatter.new(output_path)
+    formatter = PolicyFormatter.new(output_path)
     formatter.write(data)
 
     lines = File.readlines(output_path).map(&:strip)
@@ -31,7 +31,7 @@ describe PolicyOutputFormatter do
 
   it "does not add extra whitespace when status is nil" do
     data = [["123456789", nil]]
-    formatter = PolicyOutputFormatter.new(output_path)
+    formatter = PolicyFormatter.new(output_path)
     formatter.write(data)
 
     line = File.read(output_path).strip

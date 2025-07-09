@@ -6,20 +6,27 @@ describe PolicyOCR do
   describe "#parse" do
     it "returns 9 entries from the sample file" do
       result = parser.parse
-      expect(result.length).to eq(9)
+      expect(result.length).to eq(11)
     end
 
-    it "parses each entry into a 9-digit string of digits or ?" do
+    it "parses each entry into [number, status] format" do
       result = parser.parse
-      expect(result).to all(be_a(String))
-      expect(result).to all(match(/^[0-9?]{9}$/))
+    
+      expect(result).to all(be_an(Array))
+      expect(result).to all(have_attributes(length: 2))
+    
+      result.each do |number, status|
+        expect(number).to match(/^[0-9?]{9}$/)
+        expect([nil, "ERR", "ILL"]).to include(status)
+      end
     end
+    
   end
 
   describe "#entries" do
     it "extracts 3-line blocks from file" do
       entries = parser.send(:entries)
-      expect(entries.length).to eq(9)
+      expect(entries.length).to eq(11)
       expect(entries.first.length).to eq(3)
     end
   end
