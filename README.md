@@ -116,3 +116,9 @@ The test suite covers:
 - **Valid**: All digits recognized, checksum passes
 - **ILL**: Contains "?" characters (illegible)
 - **ERR**: All digits recognized but checksum fails
+
+## Demo
+
+
+## Time Spent:
+The core program was done in about 2 hours and 15 minutes, but cleanup pushed it to about 3 hours
