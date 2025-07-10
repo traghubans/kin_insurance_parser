@@ -44,7 +44,7 @@ Convert insurance policy numbers from ASCII art representations (7-segment displ
    ```
 
 ## File Format
-```
+
 
 ### Input File Format
 
