@@ -32,6 +32,7 @@ describe PolicyOCR do
         expect([nil, 'ERR', 'ILL']).to include(status)
       end
     end
+    
   end
 
   describe '#entries' do
