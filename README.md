@@ -52,14 +52,6 @@ Each policy number is represented by 4 lines:
 - **Lines 1-3**: 7-segment display representation (27 characters each)
 - **Line 4**: Blank line (separator)
 
-Example:
-```
- _  _  _  _  _  _  _  _  _ 
-| || || || || || || || || |
-|_||_||_||_||_||_||_||_||_|
-                           
-```
-
 ### Output Format
 
 The parser returns an array of arrays, where each inner array contains:
@@ -75,9 +67,11 @@ Example output:
 ]
 ```
 The formatter will take this and return in the output.txt file:
+```
 123456789
 12345678? ILL
 123456789 ERR
+```
 
 ## Testing
 
