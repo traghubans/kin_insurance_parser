@@ -107,7 +107,7 @@ The test suite covers:
 
 ### 2. Entry Extraction
 - Extracts 3-line entries (ignoring blank separator lines)
-- Filters for valid entries (26-27 characters per line)
+- Filters for valid entries (27 characters per line)
 - Validates entry structure
 
 ### 3. Digit Recognition
@@ -125,3 +125,8 @@ https://drive.google.com/file/d/1DP4nQgvrHToftJm045jnSLhKpk66-evV/view?usp=shari
 
 ## Time Spent:
 The core program was done in about 2 hours and 15 minutes, but cleanup pushed it to about 3 hours
+
+## Improvements I would consider with more time:
+- Passing the sample file path in the terminal
+- Creating an easier start command rather than ruby bin/run.rb
+- 
