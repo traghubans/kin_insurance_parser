@@ -59,13 +59,13 @@ The parser returns an array of arrays, where each inner array contains:
 - **Position 1**: Status (`nil` for valid, `"ERR"` for checksum error, `"ILL"` for illegible)
 
 Example output:
-```ruby
 [
   ["123456789", nil],      # Valid policy number
   ["12345678?", "ILL"],    # Illegible (contains "?")
   ["123456789", "ERR"]     # Checksum error
 ]
-```
+
+
 The formatter will take this and return in the output.txt file:
 ```
 123456789
