@@ -35,7 +35,10 @@ Convert insurance policy numbers from ASCII art representations (7-segment displ
    bundle exec rspec
    ```
 4. **Run Application**
-   There are three sample files you could run, you can decide which one to run by editing the input path in bin/run.rb
+   There are three sample files you could run, you can decide which one to run by
+      - editing the input path in bin/run.rb
+      - saving the file
+   
    The options you have are sample.txt, sample2.txt, and sample3.txt
    Then run in your terminal below:
 
@@ -118,7 +121,7 @@ The test suite covers:
 - **ERR**: All digits recognized but checksum fails
 
 ## Demo
-
+https://drive.google.com/file/d/1DP4nQgvrHToftJm045jnSLhKpk66-evV/view?usp=sharing
 
 ## Time Spent:
 The core program was done in about 2 hours and 15 minutes, but cleanup pushed it to about 3 hours
